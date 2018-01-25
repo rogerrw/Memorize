@@ -9,6 +9,12 @@ module.exports = {
 
   attributes: {
 
+  },
+  options: {
+    tableName: 'user',
+    classMethods: {},
+    instanceMethods: {},
+    hooks: {},
+    scopes: {},
   }
 };
-

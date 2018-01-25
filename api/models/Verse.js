@@ -8,7 +8,16 @@
 module.exports = {
 
   attributes: {
-
+    verseText: {
+      type: Sequelize.STRING,
+      allowNull: false
+    }
+  },
+  options: {
+    tableName: 'kjv',
+    classMethods: {},
+    instanceMethods: {},
+    hooks: {},
+    scopes: {},
   }
 };
-
