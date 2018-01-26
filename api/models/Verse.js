@@ -8,8 +8,20 @@
 module.exports = {
 
   attributes: {
-    verseText: {
+    book: {
       type: Sequelize.STRING,
+      allowNull: false
+    },
+    chapter: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    verse: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    verseText: {
+      type: Sequelize.TEXT,
       allowNull: false
     }
   },
