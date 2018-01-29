@@ -34,7 +34,13 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
+  '/verse': {
+    view: 'verse'
+  },
+  
+  'get /verse': 'VerseController.lookUp',
 
   /***************************************************************************
   *                                                                          *
