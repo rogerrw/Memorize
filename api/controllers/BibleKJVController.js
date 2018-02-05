@@ -6,7 +6,8 @@
 
 module.exports = {
 	lookUp: function (req, res) {
-		// BibleKJV.findById();
+		debugger;
+		BibleKJV.findById();
 		return res.view('verse', {});
 	},
 };
