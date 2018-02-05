@@ -1,17 +1,15 @@
 /**
- * Verse.js
+ * BibleKJV.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ * @description :: The Bible in the King James' Version.
  */
 
 module.exports = {
-
   attributes: {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true
-    }
+    },
     book: {
       type: Sequelize.STRING,
       allowNull: false
@@ -29,6 +27,7 @@ module.exports = {
       allowNull: false
     }
   },
+
   options: {
     tableName: 'kjv',
     classMethods: {},
@@ -36,5 +35,6 @@ module.exports = {
     hooks: {},
     scopes: {},
     schema: 'bible',
+    timestamps: false,
   }
 };
