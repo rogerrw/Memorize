@@ -36,11 +36,7 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  '/verse': {
-    view: 'verse'
-  },
-  
-  'get /verse': 'VerseController.lookUp',
+  'get /lookup': 'BibleKJVController.lookUp',
 
   /***************************************************************************
   *                                                                          *
