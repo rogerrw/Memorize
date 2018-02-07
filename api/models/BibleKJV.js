@@ -11,7 +11,7 @@ module.exports = {
       primaryKey: true
     },
     book: {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
       allowNull: false
     },
     chapter: {
