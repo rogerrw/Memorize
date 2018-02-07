@@ -6,18 +6,36 @@
 
 module.exports = {
 	lookUp: function (req, res) {
+		const defaultLocals = {
+			searchResults: []
+		};
+
+		if (_.isEmpty(req.query)) {
+			return res.view('lookup', defaultLocals);
+		}
+
+		const whereClause = req.param('verse') ?
+				{
+					book: req.param('book'),
+					chapter: req.param('chapter', 1),
+					verse: req.param('verse')
+				} : {
+					book: req.param('book'),
+					chapter: req.param('chapter', 1),
+				};
+
 		BibleKJV.findAll({
 			attributes: ['book', 'chapter', 'verse', 'verseText'],
-			where: {
-				book: 1,
-				chapter: 1,
-				verse: 1
-			}
+			where: whereClause
 		}).then( results => {
+			if (results.length === 0) {
+				return res.view('lookUp', defaultLocals);
+			}
+
 			return res.view('lookup', {
-				firstResult: results[0].dataValues.verseText
+				searchResults: results[0].dataValues.verseText
 			});
-		}).catch( function(err) {
+		}).catch( err => {
 			return res.serverError(err);
 		});
 	},

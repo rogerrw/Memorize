@@ -1,12 +1,14 @@
 <h1>Look up Bible verses!</h1>
 
 <div id="search-area">
-  <input type="text" placeholder="book">
-  <input type="number" placeholder="ch.">
-  <input type="number" placeholder="verse">
-  <button type="submit">Search</button>
+  <form method="get" id="bible-search-form">
+    <input type="number" name="book" placeholder="book" required>
+    <input type="number" name="chapter" placeholder="ch.">
+    <input type="number" name="verse" placeholder="verse">
+  </form>
+  <button type="submit" form="bible-search-form">Search</button>
 </div>
 
 <div id="verse-result">
-  <%= firstResult %>
+  <%= searchResults %>
 </div>
